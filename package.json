@@ -1,14 +1,14 @@
 {
   "name": "typed-error",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A class designed to enable easily extending the built-in javascript Error, allowing typed errors.",
-  "main": "src/custom-error.js",
+  "main": "src/typed-error.js",
   "scripts": {
     "test": "node node_modules/coffee-script/bin/coffee -c . && node node_modules/mocha/bin/mocha"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/resin-io/custom-error.git"
+    "url": "https://github.com/resin-io/typed-error.git"
   },
   "devDependencies": {
     "bluebird": "~2.2.2",
@@ -19,7 +19,7 @@
   },
   "author": "",
   "bugs": {
-    "url": "https://github.com/resin-io/custom-error/issues"
+    "url": "https://github.com/resin-io/typed-error/issues"
   },
-  "homepage": "https://github.com/resin-io/custom-error"
+  "homepage": "https://github.com/resin-io/typed-error"
 }
