@@ -55,7 +55,6 @@ Promise.try ->
 	console.log('Do custom handling')
 .catch ->
 	console.log('Another type of error')
-```
 
 # Or
 MyErrorConstructorName = (e) -> e.constructor.name is 'MyError'
