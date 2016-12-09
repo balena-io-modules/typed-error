@@ -5,22 +5,37 @@ class BaseError {
 }
 BaseError.prototype = Object.create(Error.prototype)
 
-export = class TypedError extends BaseError {
+let getStackTrace: (e: TypedError, err: Error | string) => void
+if (Error.captureStackTrace != null) {
+	const captureStackTrace = Error.captureStackTrace
+	getStackTrace = (e) => {
+		captureStackTrace(e, e.constructor)
+	}
+} else {
+	getStackTrace = (e, err) => {
+		if (!(err instanceof Error)) {
+			err = new Error(err)
+		}
+		if (err.stack != null) {
+			e.stack = err.stack
+		}
+	}
+}
+
+class TypedError extends BaseError {
 	public name: string
 	public message: string
 	public stack: string
 	constructor(err: Error | string = '') {
 		super()
-		if (!(err instanceof Error)) {
-			err = new Error(err)
+		if (err instanceof Error) {
+			this.message = err.message
+		} else {
+			this.message = err
 		}
-		err.name = (this.constructor as any).name
-		this.name = err.name
-		this.message = err.message
-		if (Error.captureStackTrace != null) {
-			Error.captureStackTrace(this, this.constructor)
-		} else if (err.stack != null) {
-			this.stack = err.stack
-		}
+		this.name = (this.constructor as any).name
+		getStackTrace(this, err)
 	}
 }
+
+export = TypedError
