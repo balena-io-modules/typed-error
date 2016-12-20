@@ -36,12 +36,9 @@ describe 'Bluebird try/catch', ->
 		expect(
 			Promise.try ->
 				throw new MyError()
-			.then ->
-				return false
-			.catch MyError, ->
-				return true
-			.catch ->
-				return false
+			.return(false)
+			.catchReturn(MyError, true)
+			.catchReturn(false)
 		).to.eventually.equal true
 
 	it 'name', ->
@@ -49,12 +46,9 @@ describe 'Bluebird try/catch', ->
 		expect(
 			Promise.try ->
 				throw new MyError()
-			.then ->
-				return false
-			.catch MyErrorName, ->
-				return true
-			.catch ->
-				return false
+			.return(false)
+			.catchReturn(MyErrorName, true)
+			.catchReturn(false)
 		).to.eventually.equal true
 
 	it 'constructor.name', ->
@@ -62,10 +56,7 @@ describe 'Bluebird try/catch', ->
 		expect(
 			Promise.try ->
 				throw new MyError()
-			.then ->
-				return false
-			.catch MyErrorConstructorName, ->
-				return true
-			.catch ->
-				return false
+			.return(false)
+			.catchReturn(MyErrorConstructorName, true)
+			.catchReturn(false)
 		).to.eventually.equal true
