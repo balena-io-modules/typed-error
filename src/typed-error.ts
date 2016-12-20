@@ -1,3 +1,4 @@
+/// <reference path='ext.d.ts'/>
 class BaseError {
 	constructor() {
 		Error.apply(this, arguments)
@@ -33,7 +34,7 @@ class TypedError extends BaseError {
 		} else {
 			this.message = err
 		}
-		this.name = (this.constructor as any).name
+		this.name = this.constructor.name
 		getStackTrace(this, err)
 	}
 }
