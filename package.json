@@ -5,7 +5,8 @@
   "main": "src/typed-error.js",
   "types": "src/typed-error.ts",
   "scripts": {
-    "prepublish": "npm test",
+    "prepublish": "require-npm4-to-publish",
+    "prepublishOnly": "npm test",
     "pretest": "tsc",
     "test": "mocha --compilers ts:ts-node/register && mocha --compilers coffee:coffee-script/register"
   },
@@ -22,6 +23,7 @@
     "chai-as-promised": "~4.1.1",
     "coffee-script": "~1.12.0",
     "mocha": "~1.21.3",
+    "require-npm4-to-publish": "^1.0.0",
     "ts-node": "^1.7.2",
     "typescript": "^2.1.4"
   },
