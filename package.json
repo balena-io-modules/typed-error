@@ -7,19 +7,22 @@
   "scripts": {
     "prepublish": "npm test",
     "pretest": "tsc",
-    "test": "mocha"
+    "test": "mocha --compilers ts:ts-node/register && mocha --compilers coffee:coffee-script/register"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/resin-io/typed-error.git"
   },
   "devDependencies": {
+    "@types/bluebird": "^3.0.36",
+    "@types/mocha": "^2.2.33",
     "@types/node": "^6.0.48",
     "bluebird": "^3.4.6",
     "chai": "~1.9.0",
     "chai-as-promised": "~4.1.1",
     "coffee-script": "~1.12.0",
     "mocha": "~1.21.3",
+    "ts-node": "^1.7.2",
     "typescript": "^2.1.4"
   },
   "author": "",
