@@ -1,6 +1,6 @@
 {
   "name": "typed-error",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A class designed to enable easily extending the built-in javascript Error, allowing typed errors.",
   "main": "src/typed-error.js",
   "types": "src/typed-error.ts",
