@@ -1,14 +1,14 @@
 {
-	"compilerOptions": {
-		"module": "umd",
-		"noImplicitAny": true,
-		"removeComments": true,
-		"preserveConstEnums": true,
-		"strictNullChecks": true,
-		"sourceMap": true,
-		"target": "es5"
-	},
-	"files": [
-		"src/typed-error.ts"
-	]
+  "compilerOptions": {
+    "module": "umd",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "strictNullChecks": true,
+    "sourceMap": true,
+    "target": "es5"
+  },
+  "files": [
+    "src/typed-error.ts"
+  ]
 }
