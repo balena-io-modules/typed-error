@@ -34,5 +34,8 @@
   "bugs": {
     "url": "https://github.com/resin-io/typed-error/issues"
   },
-  "homepage": "https://github.com/resin-io/typed-error"
+  "homepage": "https://github.com/resin-io/typed-error",
+  "dependencies": {
+    "tslib": "^1.7.1"
+  }
 }
