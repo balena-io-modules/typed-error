@@ -44,7 +44,7 @@ describe('typescript', () => {
 				e = err
 			}
 
-			expect(e).to.have.deep.property('constructor.name', 'MyError')
+			expect(e).to.have.nested.property('constructor.name', 'MyError')
 		})
 	})
 
