@@ -1,13 +1,13 @@
 {
   "compilerOptions": {
-    "module": "umd",
+    "module": "commonjs",
     "noImplicitAny": true,
     "removeComments": true,
     "preserveConstEnums": true,
     "strictNullChecks": true,
     "sourceMap": true,
     "target": "es5",
-    "importHelpers": false,
+    "importHelpers": true,
     "lib": ["es5", "es6"],
     "moduleResolution": "node"
   },
