@@ -1,6 +1,7 @@
 {
   "name": "typed-error",
-  "version": "2.0.0",
+  "version": "2.0.1",
+  "license": "Apache-2.0",
   "description": "A class designed to enable easily extending the built-in javascript Error, allowing typed errors.",
   "main": "src/typed-error.js",
   "types": "src/typed-error.ts",
