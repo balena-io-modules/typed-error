@@ -9,6 +9,8 @@
     "prepublish": "require-npm4-to-publish",
     "prepublishOnly": "npm test",
     "pretest": "npm run build",
+    "lint": "resin-lint --typescript src/ test/ && tslint --format stylish --project .",
+    "lintfix": "tslint --fix --format stylish --project .",
     "build": "tsc",
     "prettify": "prettier --use-tabs --single-quote --write src/*.ts",
     "test": "mocha --compilers ts:ts-node/register && mocha --compilers coffee:coffee-script/register",
@@ -20,6 +22,8 @@
   },
   "devDependencies": {
     "@types/bluebird": "^3.5.8",
+    "@types/chai": "^4.1.2",
+    "@types/chai-as-promised": "^7.1.0",
     "@types/mocha": "^2.2.41",
     "@types/node": "^8.0.14",
     "bluebird": "^3.5.0",
@@ -29,8 +33,10 @@
     "mocha": "^3.4.2",
     "prettier": "^1.5.3",
     "require-npm4-to-publish": "^1.0.0",
-    "ts-node": "^3.2.1",
-    "typescript": "2.4.2"
+    "resin-lint": "^1.5.0",
+    "ts-node": "^5.0.1",
+    "tslint": "^5.9.1",
+    "typescript": "2.8.1"
   },
   "author": "",
   "bugs": {
