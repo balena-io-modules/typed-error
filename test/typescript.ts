@@ -1,14 +1,11 @@
-/// <reference types="mocha" />
-/// <reference types="node" />
-/// <reference path='../src/ext.d.ts'/>
-const chai = require('chai')
-const chaiAsPromised = require('chai-as-promised')
+import * as Promise from 'bluebird';
+import * as chai from 'chai';
+import * as chaiAsPromised from 'chai-as-promised';
 
 chai.use(chaiAsPromised)
 const { expect } = chai
 
-import TypedError = require('../src/typed-error')
-import * as Promise from 'bluebird'
+import { TypedError } from '../src/typed-error';
 
 class MyError extends TypedError {}
 

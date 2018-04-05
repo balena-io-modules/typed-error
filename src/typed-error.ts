@@ -1,5 +1,4 @@
-/// <reference path='ext.d.ts'/>
-class BaseError {
+export class BaseError {
 	constructor() {
 		Error.apply(this, arguments);
 	}
@@ -23,7 +22,7 @@ if (Error.captureStackTrace != null) {
 	};
 }
 
-class TypedError extends BaseError {
+export class TypedError extends BaseError {
 	public name: string;
 	public message: string;
 	public stack: string;
@@ -38,5 +37,3 @@ class TypedError extends BaseError {
 		getStackTrace(this, err);
 	}
 }
-
-export = TypedError;

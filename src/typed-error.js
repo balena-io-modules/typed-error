@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var tslib_1 = require("tslib");
 var BaseError = (function () {
     function BaseError() {
@@ -6,6 +7,7 @@ var BaseError = (function () {
     }
     return BaseError;
 }());
+exports.BaseError = BaseError;
 BaseError.prototype = Object.create(Error.prototype);
 var getStackTrace;
 if (Error.captureStackTrace != null) {
@@ -41,5 +43,5 @@ var TypedError = (function (_super) {
     }
     return TypedError;
 }(BaseError));
-module.exports = TypedError;
+exports.TypedError = TypedError;
 //# sourceMappingURL=typed-error.js.map

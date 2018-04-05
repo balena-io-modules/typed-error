@@ -4,7 +4,7 @@ chaiAsPromised = require 'chai-as-promised'
 chai.use(chaiAsPromised)
 {expect} = chai
 
-TypedError = require '../src/typed-error'
+{ TypedError } = require '../src/typed-error'
 Promise = require 'bluebird'
 
 class MyError extends TypedError
