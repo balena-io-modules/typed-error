@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "module": "commonjs",
+    "outDir": "lib/",
     "noImplicitAny": true,
     "removeComments": true,
     "preserveConstEnums": true,
@@ -12,7 +13,8 @@
     "moduleResolution": "node",
     "declaration": true
   },
-  "files": [
-    "src/typed-error.ts"
+  "include": [
+    "src/**/*.ts",
+    "test/**/*.ts"
   ]
 }

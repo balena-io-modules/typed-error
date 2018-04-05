@@ -3,15 +3,15 @@
   "version": "2.0.1",
   "license": "Apache-2.0",
   "description": "A class designed to enable easily extending the built-in javascript Error, allowing typed errors.",
-  "main": "src/typed-error.js",
-  "types": "src/typed-error.d.ts",
+  "main": "lib/typed-error.js",
+  "types": "lib/typed-error.d.ts",
   "scripts": {
     "prepublish": "require-npm4-to-publish",
     "prepublishOnly": "npm test",
     "pretest": "npm run build",
     "lint": "resin-lint --typescript src/ test/ && tslint --format stylish --project .",
     "lintfix": "tslint --fix --format stylish --project .",
-    "build": "tsc",
+    "build": "tsc --pretty --project ./tsconfig.dist.json",
     "prettify": "prettier --use-tabs --single-quote --write src/*.ts",
     "test": "mocha --compilers ts:ts-node/register && mocha --compilers coffee:coffee-script/register",
     "prepare": "npm run build"

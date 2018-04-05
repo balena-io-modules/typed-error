@@ -5,7 +5,7 @@ import * as chaiAsPromised from 'chai-as-promised';
 chai.use(chaiAsPromised);
 const { expect } = chai;
 
-import { TypedError } from '../src/typed-error';
+import { TypedError } from '../lib/typed-error';
 
 class MyError extends TypedError {}
 
@@ -30,7 +30,7 @@ describe('typescript', () => {
 				e = err;
 			}
 
-			expect(e).to.have.a.property('name', 'MyError');
+			expect(e).to.have.property('name', 'MyError');
 		});
 
 		it('constructor.name', () => {
