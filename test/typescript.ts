@@ -1,87 +1,84 @@
-/// <reference types="mocha" />
-/// <reference types="node" />
-/// <reference path='../src/ext.d.ts'/>
-const chai = require('chai')
-const chaiAsPromised = require('chai-as-promised')
+import * as Promise from 'bluebird';
+import * as chai from 'chai';
+import * as chaiAsPromised from 'chai-as-promised';
 
-chai.use(chaiAsPromised)
-const { expect } = chai
+chai.use(chaiAsPromised);
+const { expect } = chai;
 
-import TypedError = require('../src/typed-error')
-import * as Promise from 'bluebird'
+import { TypedError } from '../lib/typed-error';
 
 class MyError extends TypedError {}
 
 describe('typescript', () => {
 	describe('Standard try/catch', () => {
 		it('instanceof', () => {
-			let e: Error
+			let e: Error;
 			try {
-				throw new MyError()
+				throw new MyError();
 			} catch(err) {
-				e = err
+				e = err;
 			}
 
-			expect(e).to.be.an.instanceof(MyError)
-		})
+			expect(e).to.be.an.instanceof(MyError);
+		});
 
 		it('name', () => {
-			let e: Error
+			let e: Error;
 			try {
-				throw new MyError()
+				throw new MyError();
 			} catch(err) {
-				e = err
+				e = err;
 			}
 
-			expect(e).to.have.a.property('name', 'MyError')
-		})
+			expect(e).to.have.property('name', 'MyError');
+		});
 
 		it('constructor.name', () => {
-			let e: Error
+			let e: Error;
 			try {
-				throw new MyError()
+				throw new MyError();
 			} catch(err) {
-				e = err
+				e = err;
 			}
 
-			expect(e).to.have.nested.property('constructor.name', 'MyError')
-		})
-	})
+			expect(e).to.have.nested.property('constructor.name', 'MyError');
+		});
+	});
 
 	describe('Bluebird try/catch', () => {
 		it('instanceof', () => {
 			expect(
 				Promise.try(() => {
-					throw new MyError()
+					throw new MyError();
 				})
 				.return(false)
 				.catch(MyError, () => true)
 				.catch(() => false)
-			).to.eventually.equal(true)
-		})
+			).to.eventually.equal(true);
+		});
 
 		it('name', () => {
-			const MyErrorName = (e: Error) => e.name === 'MyError'
+			const MyErrorName = (e: Error) => e.name === 'MyError';
 			expect(
 				Promise.try(() => {
-					throw new MyError()
+					throw new MyError();
 				})
 				.return(false)
 				.catch(MyErrorName, () => true)
 				.catch(() => false)
-			).to.eventually.equal(true)
-		})
+			).to.eventually.equal(true);
+		});
 
 		it('constructor.name', () => {
-			const MyErrorConstructorName = (e: Error) => e.constructor.name === 'MyError'
+			const MyErrorConstructorName = (e: Error) => e.constructor.name === 'MyError';
 			expect(
 				Promise.try(() => {
-					throw new MyError()
+					throw new MyError();
 				})
 				.return(false)
 				.catch(MyErrorConstructorName, () => true)
 				.catch(() => false)
-			).to.eventually.equal(true)
-		})
-	})
-})
+			).to.eventually.equal(true);
+		});
+	});
+});

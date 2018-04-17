@@ -1,11 +1,3 @@
-/// <reference path='ext.d.ts'/>
-class BaseError {
-	constructor() {
-		Error.apply(this, arguments);
-	}
-}
-BaseError.prototype = Object.create(Error.prototype);
-
 let getStackTrace: (e: TypedError, err: Error | string) => void;
 if (Error.captureStackTrace != null) {
 	const captureStackTrace = Error.captureStackTrace;
@@ -23,10 +15,11 @@ if (Error.captureStackTrace != null) {
 	};
 }
 
-class TypedError extends BaseError {
+export class TypedError extends Error {
 	public name: string;
 	public message: string;
-	public stack: string;
+	public stack: string = '';
+
 	constructor(err: Error | string = '') {
 		super();
 		if (err instanceof Error) {
@@ -34,9 +27,8 @@ class TypedError extends BaseError {
 		} else {
 			this.message = err;
 		}
+		Object.setPrototypeOf(this, new.target.prototype);
 		this.name = this.constructor.name;
 		getStackTrace(this, err);
 	}
 }
-
-export = TypedError;
