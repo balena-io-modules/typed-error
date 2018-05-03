@@ -19,6 +19,7 @@ export class TypedError extends Error {
 	public name: string;
 	public message: string;
 	public stack: string = '';
+	public payload: any | null;
 
 	constructor(err: Error | string = '') {
 		super();
