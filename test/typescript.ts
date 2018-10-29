@@ -15,7 +15,7 @@ describe('typescript', () => {
 			let e: Error;
 			try {
 				throw new MyError();
-			} catch(err) {
+			} catch (err) {
 				e = err;
 			}
 
@@ -26,7 +26,7 @@ describe('typescript', () => {
 			let e: Error;
 			try {
 				throw new MyError();
-			} catch(err) {
+			} catch (err) {
 				e = err;
 			}
 
@@ -37,7 +37,7 @@ describe('typescript', () => {
 			let e: Error;
 			try {
 				throw new MyError();
-			} catch(err) {
+			} catch (err) {
 				e = err;
 			}
 
@@ -51,9 +51,9 @@ describe('typescript', () => {
 				Promise.try(() => {
 					throw new MyError();
 				})
-				.return(false)
-				.catch(MyError, () => true)
-				.catch(() => false)
+					.return(false)
+					.catch(MyError, () => true)
+					.catch(() => false),
 			).to.eventually.equal(true);
 		});
 
@@ -63,21 +63,22 @@ describe('typescript', () => {
 				Promise.try(() => {
 					throw new MyError();
 				})
-				.return(false)
-				.catch(MyErrorName, () => true)
-				.catch(() => false)
+					.return(false)
+					.catch(MyErrorName, () => true)
+					.catch(() => false),
 			).to.eventually.equal(true);
 		});
 
 		it('constructor.name', () => {
-			const MyErrorConstructorName = (e: Error) => e.constructor.name === 'MyError';
+			const MyErrorConstructorName = (e: Error) =>
+				e.constructor.name === 'MyError';
 			expect(
 				Promise.try(() => {
 					throw new MyError();
 				})
-				.return(false)
-				.catch(MyErrorConstructorName, () => true)
-				.catch(() => false)
+					.return(false)
+					.catch(MyErrorConstructorName, () => true)
+					.catch(() => false),
 			).to.eventually.equal(true);
 		});
 	});
