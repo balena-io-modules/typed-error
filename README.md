@@ -2,7 +2,7 @@ This module allows you to easily extend the built-in Error type for typed error 
 
 For typescript:
 ```typescript
-import TypedError = require('typed-error')
+import { TypedError } from 'typed-error'
 
 class MyError extends TypedError {}
 
@@ -42,7 +42,7 @@ try {
 
 And with bluebird:
 ```typescript
-import TypedError = require('../src/typed-error')
+import { TypedError } from 'typed-error'
 import * as Promise from 'bluebird'
 
 class MyError extends TypedError {}
@@ -84,7 +84,7 @@ Promise.try(() => {
 
 For coffeescript:
 ```coffeescript
-TypedError = require 'typed-error'
+{ TypedError } = require 'typed-error'
 
 class MyError extends TypedError
 
@@ -119,7 +119,7 @@ catch e
 And with bluebird:
 ```coffeescript
 Promise = require 'bluebird'
-TypedError = require 'typed-error'
+{ TypedError } = require 'typed-error'
 
 class MyError extends TypedError
 
