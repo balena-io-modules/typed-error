@@ -1,4 +1,16 @@
 - commits:
+    - subject: update deps and specify minimum engine requirements
+      hash: 22f293afc187e67b88dab280951eb6e2bb504b24
+      body: ''
+      footer:
+        Change-type: minor
+        change-type: minor
+        Signed-off-by: Will Boyce <will@balena.io>
+        signed-off-by: Will Boyce <will@balena.io>
+      author: Will Boyce
+  version: 3.2.0
+  date: 2019-11-20T09:52:39.017Z
+- commits:
     - subject: 'dev: Enforce prettier coding standards'
       hash: 47c07a641fa39ddb833b41aff7a918accad08289
       body: ''
