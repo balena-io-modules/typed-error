@@ -1,7 +1,7 @@
 let getStackTrace: (e: TypedError, err: Error | string) => void;
 if (Error.captureStackTrace != null) {
 	const captureStackTrace = Error.captureStackTrace;
-	getStackTrace = e => {
+	getStackTrace = (e) => {
 		captureStackTrace(e, e.constructor);
 	};
 } else {
