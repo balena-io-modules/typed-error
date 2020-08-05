@@ -1,4 +1,14 @@
 - commits:
+    - subject: Update dependencies
+      hash: dc41949015399154efb4529183daa0dfc9269b52
+      body: ''
+      footer:
+        Change-type: patch
+        change-type: patch
+      author: Pagan Gazzard
+  version: 3.2.1
+  date: 2020-08-05T12:34:06.377Z
+- commits:
     - subject: update deps and specify minimum engine requirements
       hash: 22f293afc187e67b88dab280951eb6e2bb504b24
       body: ''
