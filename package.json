@@ -1,6 +1,6 @@
 {
   "name": "typed-error",
-  "version": "3.2.1",
+  "version": "3.2.2",
   "license": "Apache-2.0",
   "description": "A class designed to enable easily extending the built-in javascript Error, allowing typed errors.",
   "main": "lib/typed-error.js",
@@ -46,5 +46,8 @@
   "bugs": {
     "url": "https://github.com/balena-io-modules/typed-error/issues"
   },
-  "homepage": "https://github.com/balena-io-modules/typed-error"
+  "homepage": "https://github.com/balena-io-modules/typed-error",
+  "versionist": {
+    "publishedAt": "2023-04-20T10:06:29.466Z"
+  }
 }
