@@ -30,7 +30,7 @@ describe 'coffeescript', ->
 				throw new MyError()
 			catch e
 
-			expect(e).to.have.nested.property('constructor.name', 'MyError')
+			expect(e).to.have.property('constructor').that.has.property('name', 'MyError');
 
 	describe 'Bluebird try/catch', ->
 		it 'instanceof', ->

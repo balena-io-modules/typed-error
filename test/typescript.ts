@@ -41,7 +41,9 @@ describe('typescript', () => {
 				e = err;
 			}
 
-			expect(e).to.have.nested.property('constructor.name', 'MyError');
+			expect(e)
+				.to.have.property('constructor')
+				.that.has.property('name', 'MyError');
 		});
 	});
 

@@ -1,6 +1,0 @@
---reporter spec
---recursive
---require coffeescript/register
---require ts-node/register/type-check
-test/**/*.ts
-test/**/*.coffee
