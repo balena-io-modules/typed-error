@@ -1,4 +1,4 @@
-import * as Promise from 'bluebird';
+import * as Bluebird from 'bluebird';
 import * as chai from 'chai';
 import * as chaiAsPromised from 'chai-as-promised';
 
@@ -48,9 +48,9 @@ describe('typescript', () => {
 	});
 
 	describe('Bluebird try/catch', () => {
-		it('instanceof', () => {
-			expect(
-				Promise.try(() => {
+		it('instanceof', async () => {
+			await expect(
+				Bluebird.try(() => {
 					throw new MyError();
 				})
 					.return(false)
@@ -59,10 +59,10 @@ describe('typescript', () => {
 			).to.eventually.equal(true);
 		});
 
-		it('name', () => {
+		it('name', async () => {
 			const MyErrorName = (e: Error) => e.name === 'MyError';
-			expect(
-				Promise.try(() => {
+			await expect(
+				Bluebird.try(() => {
 					throw new MyError();
 				})
 					.return(false)
@@ -71,11 +71,11 @@ describe('typescript', () => {
 			).to.eventually.equal(true);
 		});
 
-		it('constructor.name', () => {
+		it('constructor.name', async () => {
 			const MyErrorConstructorName = (e: Error) =>
 				e.constructor.name === 'MyError';
-			expect(
-				Promise.try(() => {
+			await expect(
+				Bluebird.try(() => {
 					throw new MyError();
 				})
 					.return(false)

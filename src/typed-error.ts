@@ -18,7 +18,7 @@ if (Error.captureStackTrace != null) {
 export class TypedError extends Error {
 	public name: string;
 	public message: string;
-	public stack: string = '';
+	public stack = '';
 
 	constructor(err: Error | string = '') {
 		super();
