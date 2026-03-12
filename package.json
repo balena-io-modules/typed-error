@@ -12,7 +12,7 @@
   "engineStrict": true,
   "scripts": {
     "lint": "balena-lint src test",
-    "lint:fix": "balena-lint --fix src test",
+    "lint-fix": "balena-lint --fix src test",
     "build": "tsc --pretty --project ./tsconfig.dist.json",
     "test": "mocha --config test/.mocha.yml",
     "pretest": "npm run build",
@@ -23,7 +23,7 @@
     "url": "https://github.com/balena-io-modules/typed-error.git"
   },
   "devDependencies": {
-    "@balena/lint": "^6.2.2",
+    "@balena/lint": "^9.3.13",
     "@types/bluebird": "^3.5.38",
     "@types/chai": "^4.3.4",
     "@types/chai-as-promised": "^7.1.5",
